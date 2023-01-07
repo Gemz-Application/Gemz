@@ -1,8 +1,8 @@
-# gemz
+# GEMZ
 
-##The BeReal for intellectuals.
+The BeReal for intellectuals.
 
-##The Mission
+The Mission
 
 Connecting Friendz through Gemz.
 
