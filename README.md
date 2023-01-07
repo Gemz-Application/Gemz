@@ -1,16 +1,25 @@
 # gemz
 
-A new Flutter project.
+##The BeReal for intellectuals.
 
-## Getting Started
+##The Mission
 
-This project is a starting point for a Flutter application.
+Connecting Friendz through Gemz.
 
-A few resources to get you started if this is your first Flutter project:
+In a world of limitless content -- but limited real connection -- our mission is to connect (highly) curious and independent thinkers to new friendships and networks that they wouldn't have gained access to otherwise.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+As the saying goes, "you’re the average of the five people you surround yourself with most.”
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+...and with the way most of social media currently works (YouTube, Twitter, IG, etc.), it's simply too difficult for you to create these organic networks:
+
+Gemz 💎 fixes this:
+
+By connecting with Friendz through Gemz, you will not only have a ONE place to share all your favorite internet gemz - and store these ideas on your profile for yourself + others to see - but these gemz will also be used to connect you with NEW friends across the 🌎 world!
+
+...so Gemz will become your PERSONALIZED network of
+
+you + your friendz + your gemz.💎
+
+Link to sign-up for the waitlist: https://www.gemzapp.ca/
+
+Follow our journey in making Gemz through our notion: https://www.notion.so/jackmielke/GEMZ-9619e815e61945e8bb7c9ebd26a63416
