@@ -1,99 +1,108 @@
 import 'package:flutter/material.dart';
-import 'colorScheme.dart';
+import 'package:gemz/screens/feed_screen.dart';
+import 'package:gemz/screens/post_screen.dart';
+import 'package:gemz/screens/profile_screen.dart';
 
-void main() => runApp(GemzHomepage());
+void main() {
+  runApp(const MyApp());
+}
 
-class GemzHomepage extends StatelessWidget {
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        //issue with theme colouring and needs to be fixed later
-        theme: ThemeData(primaryColor: Colors.black),
-        home: Scaffold(
-          appBar: AppBar(
-            leading: IconButton(
-                icon: const Icon(Icons.list),
-                //**placeholder on press function
-                onPressed: () => {}),
-            title: const Text('GEMZ'),
-            actions: <Widget>[
-              IconButton(icon: const Icon(Icons.person), onPressed: () => {})
-            ],
-          ),
-          body: Container(
-              padding: const EdgeInsets.only(left: 15, right: 15),
-              color: Colors.black,
-              child: Column(
-                children: const [
-                  Divider(
-                    color: Colors.white,
-                    height: 5,
-                    thickness: 3,
-                    indent: 25,
-                    endIndent: 25,
-                  ),
-                  Divider(
-                    color: Colors.blueAccent,
-                    height: 5,
-                    thickness: 3,
-                    indent: 25,
-                    endIndent: 25,
-                  ),
-                  Padding(
-                      padding: EdgeInsets.only(top: 90),
-                      child: Text("Haven't posted yet?",
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 30))),
-                  Padding(
-                      padding: EdgeInsets.only(left: 20, top: 15, right: 20),
-                      child: Text(
-                          "Share a quick gem of content today so that you can connect and explore with the rest!",
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 20))),
+      debugShowCheckedModeBanner: false,
+      home: const RootPage(),
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSwatch().copyWith(
+          primary: Color.fromARGB(255, 46, 149, 239),
+        ),
+      ),
+    );
+  }
+}
 
-                //TODO: Finish Posting mechanism
-                  // Padding(
-                  //     padding: EdgeInsets.only(top: 90),
-                  //     child: Form(
-                  //       key: _postKey,
-                  //       child: Column(
-                  //         crossAxisAlignment: CrossAxisAlignment.start,
-                  //         children: <Widget>[
-                  //           Text("Share your Gemz"),
-                  //           TextFormField(
-                  //             decoration: const InputDecoration(
-                  //               hintText: "Original Thought",
-                  //             ),
-                  //             validator: (String? value) {
-                  //               if (value == null || value.isEmpty) {
-                  //                 return 'Please enter your Gemz!';
-                  //               }
-                  //               return null;
-                  //             },
-                  //           ),
-                  //           Padding(
-                  //             padding: const EdgeInsets.symmetric(vertical: 16.0),
-                  //             child: ElevatedButton(
-                  //               onPressed: () => {},
-                  //               child: const Text("SHARE"),
-                  //            ),
-                  //           ),
-                  //         ],
-                  //       ),
-                  //     )),
-                  Padding(
-                      padding: EdgeInsets.all(30),
-                      child: Text(
-                          "Tip: Keep a list of your favourite links all in one place so that you've always got new Gemz to share!",
-                          style: TextStyle(
-                              color: Colors.yellowAccent,
-                              fontWeight: FontWeight.bold))),
-                ],
-              )),
-        ));
+class RootPage extends StatefulWidget {
+  const RootPage({super.key});
+
+  @override
+  State<RootPage> createState() => _RootPageState();
+}
+
+class _RootPageState extends State<RootPage> {
+  int currentPage = 0;
+  List<Widget> pages = const [FeedScreen(), PostScreen(), ProfileScreen()];
+  final PageController pageController = PageController();
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Color.fromARGB(255, 43, 46, 49),
+      body: PageView(
+          controller: pageController,
+          children: const [FeedScreen(), PostScreen(), ProfileScreen()],
+          onPageChanged: (int index) {
+            setState(() {
+              currentPage = index;
+            });
+          }),
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        leading: IconButton(
+          icon: const Icon(
+            Icons.list,
+            color: Color.fromARGB(255, 43, 46, 49),
+          ),
+          onPressed: () {},
+        ),
+        title: const Text(
+          'GEMZ',
+          style: TextStyle(
+            color: Color.fromARGB(255, 43, 46, 49),
+          ),
+        ),
+        actions: <Widget>[
+          IconButton(
+            icon: const Icon(
+              Icons.diamond,
+              color: Color.fromARGB(255, 43, 46, 49),
+            ),
+            onPressed: () {},
+          ),
+        ],
+      ),
+      bottomNavigationBar: Container(
+        child: ClipRRect(
+          borderRadius: const BorderRadius.only(
+            topLeft: Radius.circular(30.0),
+            topRight: Radius.circular(30.0),
+          ),
+          child: BottomNavigationBar(
+            items: const <BottomNavigationBarItem>[
+              BottomNavigationBarItem(
+                icon: Icon(Icons.home),
+                label: 'Feed',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.post_add),
+                label: 'Post',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.person),
+                label: 'Profile',
+              ),
+            ],
+            currentIndex: currentPage,
+            onTap: (int index) {
+              setState(() {
+                pageController.jumpToPage(index);
+              });
+            },
+          ),
+        ),
+      ),
+    );
   }
 }
