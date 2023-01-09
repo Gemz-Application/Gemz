@@ -9,10 +9,10 @@ class PostContents extends StatelessWidget {
       width: 380,
       height: 400,
       decoration: BoxDecoration(
-        color: const Color.fromARGB(255, 43, 46, 49),
+        color:  Colors.black,
         border: Border.all(
           // color: Colors.white,
-          color: const Color.fromARGB(255, 43, 46, 49),
+          color: Colors.blueAccent,
           width: 1.0,
         ),
       ),

@@ -39,70 +39,77 @@ class _RootPageState extends State<RootPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 43, 46, 49),
-      body: PageView(
-          controller: pageController,
-          children: const [FeedScreen(), PostScreen(), ProfileScreen()],
-          onPageChanged: (int index) {
-            setState(() {
-              currentPage = index;
-            });
-          }),
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        leading: IconButton(
-          icon: const Icon(
-            Icons.list,
-            color: Color.fromARGB(255, 43, 46, 49),
-          ),
-          onPressed: () {},
-        ),
-        title: const Text(
-          'GEMZ',
-          style: TextStyle(
-            color: Color.fromARGB(255, 43, 46, 49),
-          ),
-        ),
-        actions: <Widget>[
-          IconButton(
-            icon: const Icon(
-              Icons.diamond,
-              color: Color.fromARGB(255, 43, 46, 49),
-            ),
-            onPressed: () {},
-          ),
-        ],
-      ),
-      bottomNavigationBar: Container(
-        child: ClipRRect(
-          borderRadius: const BorderRadius.only(
-            topLeft: Radius.circular(30.0),
-            topRight: Radius.circular(30.0),
-          ),
-          child: BottomNavigationBar(
-            items: const <BottomNavigationBarItem>[
-              BottomNavigationBarItem(
-                icon: Icon(Icons.home),
-                label: 'Feed',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.post_add),
-                label: 'Post',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.person),
-                label: 'Profile',
-              ),
-            ],
-            currentIndex: currentPage,
-            onTap: (int index) {
+        backgroundColor: Color.fromARGB(255, 43, 46, 49),
+        body: PageView(
+            controller: pageController,
+            children: const [FeedScreen(), PostScreen(), ProfileScreen()],
+            onPageChanged: (int index) {
               setState(() {
-                pageController.jumpToPage(index);
+                currentPage = index;
               });
-            },
+            }),
+        appBar: AppBar(
+          backgroundColor: Colors.black,
+          leading: IconButton(
+            icon: const Icon(
+              Icons.list,
+              size: 40,
+            ),
+            //**placeholder on press function//
+            onPressed: () => {},
           ),
+          title: const Text(
+            'GEMZ',
+            style: TextStyle(
+              color: Colors.white,
+            ),
+          ),
+          actions: <Widget>[
+            IconButton(
+                icon: const Icon(
+                  Icons.diamond,
+                  size: 40,
+                ),
+                //**placeholder on press function//
+                onPressed: () => {})
+          ],
         ),
-      ),
-    );
+        bottomNavigationBar: new Theme(
+          data: Theme.of(context).copyWith(canvasColor: Colors.black),
+          child: Container(
+            color: Colors.black,
+            child: ClipRRect(
+              // borderRadius: const BorderRadius.only(
+              //   topLeft: Radius.circular(30.0),
+              //   topRight: Radius.circular(30.0),
+              // ),
+              child: BottomNavigationBar(
+                selectedItemColor: Colors.blueAccent,
+                unselectedItemColor: Colors.white,
+                items: const <BottomNavigationBarItem>[
+                  BottomNavigationBarItem(
+                    icon: Icon(Icons.home),
+                    label: 'Feed',
+                  ),
+                  BottomNavigationBarItem(
+                    icon: Icon(Icons.post_add),
+                    label: 'Post',
+                  ),
+                  BottomNavigationBarItem(
+                    icon: Icon(Icons.person),
+                    label: 'Profile',
+                    backgroundColor: Colors.white
+                  ),
+                ],
+                currentIndex: currentPage,
+                onTap: (int index) {
+                  setState(() {
+                    pageController.jumpToPage(index);
+                  });
+                },
+              ),
+            ),
+          ),
+        ));
   }
 }

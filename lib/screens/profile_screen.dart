@@ -5,6 +5,24 @@ class ProfileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Container(
+        padding: const EdgeInsets.only(left: 15, right: 15),
+        color: Colors.black,
+        child: Column(children: const [
+          Divider(
+            color: Colors.white,
+            height: 5,
+            thickness: 3,
+            indent: 0,
+            endIndent: 0,
+          ),
+          Divider(
+            color: Colors.blueAccent,
+            height: 5,
+            thickness: 3,
+            indent: 0,
+            endIndent: 0,
+          ),
+        ]));
   }
 }
