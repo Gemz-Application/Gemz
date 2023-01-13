@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const RootPage(),
+      home: RootPage(),
       theme: ThemeData(
         colorScheme: ColorScheme.fromSwatch().copyWith(
           primary: Color.fromARGB(255, 46, 149, 239),
@@ -25,8 +25,6 @@ class MyApp extends StatelessWidget {
 }
 
 class RootPage extends StatefulWidget {
-  const RootPage({super.key});
-
   @override
   State<RootPage> createState() => _RootPageState();
 }
@@ -71,7 +69,7 @@ class _RootPageState extends State<RootPage> {
                   size: 40,
                 ),
                 //**placeholder on press function//
-                onPressed: () => {})
+                onPressed: () {})
           ],
         ),
         bottomNavigationBar: new Theme(
