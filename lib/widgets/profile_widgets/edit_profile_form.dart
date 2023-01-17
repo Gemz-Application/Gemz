@@ -97,7 +97,7 @@ class EditProfileState extends State<EditProfile> {
             Padding(
               padding: EdgeInsets.only(top: 15, bottom: 10),
               child: Text(
-                "Bio:",
+                "Bio",
                 textAlign: TextAlign.left,
                 style: TextStyle(
                   color: Colors.white,
