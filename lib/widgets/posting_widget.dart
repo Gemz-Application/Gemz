@@ -87,6 +87,7 @@ class PostingFormState extends State<PostingForm> {
                     );
                   }
                 },
+                                style: ElevatedButton.styleFrom(backgroundColor: Colors.blueAccent),
                 child: const Text('SHARE'),
               ),
             ),

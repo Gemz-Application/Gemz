@@ -31,9 +31,13 @@ class EditProfileState extends State<EditProfile> {
               ),
             ),
             TextFormField(
+              style: TextStyle(color: Colors.white),
               decoration: InputDecoration(
                 contentPadding: EdgeInsets.all(20),
-                hintText: "Type your name..."
+                hintText: "Type your name...",
+                enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(width: 2, color: Colors.blueAccent)
+                )
               ),
               validator: (value) {
                 if (value == null || value.isEmpty) {
@@ -56,9 +60,13 @@ class EditProfileState extends State<EditProfile> {
               ),
             ),
             TextFormField(
+              style: TextStyle(color: Colors.white),
               decoration: InputDecoration(
                 contentPadding: EdgeInsets.all(20),
-                hintText: "Type your username..."
+                hintText: "Type your username...",
+                enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(width: 2, color: Colors.blueAccent)
+                )
               ),
               validator: (value) {
                 if (value == null || value.isEmpty) {
@@ -81,9 +89,13 @@ class EditProfileState extends State<EditProfile> {
               ),
             ),
             TextFormField(
+              style: TextStyle(color: Colors.white),
               decoration: InputDecoration(
                 contentPadding: EdgeInsets.all(20),
-                hintText: "Type your number..."
+                hintText: "Type your number...",
+                enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(width: 2, color: Colors.blueAccent)
+                )
               ),
               validator: (value) {
                 if (value == null || value.isEmpty) {
@@ -106,9 +118,13 @@ class EditProfileState extends State<EditProfile> {
               ),
             ),
             TextFormField(
+              style: TextStyle(color: Colors.white),
               decoration: InputDecoration(
                 contentPadding: EdgeInsets.all(20),
-                hintText: "Type your bio..."
+                hintText: "Type your bio...",
+                enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(width: 2, color: Colors.blueAccent)
+                )
               ),
               validator: (value) {
                 if (value == null || value.isEmpty) {
@@ -121,7 +137,7 @@ class EditProfileState extends State<EditProfile> {
             ),
 
             Padding(
-              padding: EdgeInsets.only(top: 10),
+              padding: EdgeInsets.only(top: 20),
               child: ElevatedButton(
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {
@@ -130,6 +146,7 @@ class EditProfileState extends State<EditProfile> {
                     );
                   }
                 },
+                style: ElevatedButton.styleFrom(backgroundColor: Colors.blueAccent),
                 child: const Text('Save'),
               ),
             ),

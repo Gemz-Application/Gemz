@@ -142,6 +142,7 @@ class ProfileScreen extends StatelessWidget {
                   MaterialPageRoute(builder: (context) => const EditProfileScreen()),
                 );
               },
+                              style: ElevatedButton.styleFrom(backgroundColor: Colors.blueAccent),
               child: const Text('Edit'),
             ),
           )
